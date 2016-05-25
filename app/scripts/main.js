@@ -80,4 +80,9 @@
   }
 
   // Your custom JavaScript goes here
+
+  navigator.serviceWorker.addEventListener('message', function handler (event) {
+    console.log('Got dyno:');
+    console.log(event.data);
+  });
 })();

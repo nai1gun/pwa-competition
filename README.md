@@ -23,13 +23,15 @@ Fill in the below template for your entry
 -------------------------------------------------------------------------------
 
 
-# [Your app name here]
+# Chromogochi
 
 ## App description
 
+Take care of the Chrome T-REX dinosaur.
 
 ## Technologies used
 
+Web Starter Kit, Material Design Lite, Gulp, Bower, Angular 1
 
 ## Link to live demo
 Contest entries need to be hosted online and be accessible at least through the judging period (May 31 – June 5).
