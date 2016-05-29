@@ -125,6 +125,13 @@ gulp.task('scripts', () =>
       .pipe(gulp.dest('dist/scripts'))
 );
 
+gulp.task('deps', () => {
+  return gulp.src([
+    'app/bower_components/**/*'
+  ])
+    .pipe(gulp.dest('dist/bower_components'));
+});
+
 // Scan your HTML for assets & optimize them
 gulp.task('html', () => {
   return gulp.src('app/**/*.html')
@@ -163,7 +170,7 @@ gulp.task('html', () => {
 gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
 // Watch files for changes & reload
-gulp.task('serve', ['scripts', 'styles'], () => {
+gulp.task('serve', ['scripts', 'deps', 'styles'], () => {
   browserSync({
     notify: false,
     // Customize the Browsersync console logging prefix
@@ -181,6 +188,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['lint', 'scripts']);
+  gulp.watch(['app/bower_components/**/*'], ['deps', reload]);
   gulp.watch(['app/images/**/*'], reload);
 });
 
@@ -204,7 +212,7 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['lint', 'html', 'scripts', 'images', 'copy'],
+    ['lint', 'html', 'scripts', 'deps', 'images', 'copy'],
     'generate-service-worker',
     cb
   )

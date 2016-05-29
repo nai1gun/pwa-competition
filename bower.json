@@ -1,0 +1,21 @@
+{
+  "name": "pwa-competition",
+  "description": "Chromogochi app for pwa competition",
+  "main": "scripts/main.js",
+  "authors": [
+    "Nailgun <djkp9ik@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/nai1gun/pwa-competition",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.6"
+  }
+}

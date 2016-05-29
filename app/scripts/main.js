@@ -81,8 +81,10 @@
 
   // Your custom JavaScript goes here
 
-  navigator.serviceWorker.addEventListener('message', function handler (event) {
-    console.log('Got dyno:');
+  navigator.serviceWorker.addEventListener('message', function handler(event) {
+    if (event.data.type === 'birthday') {
+      console.log('Happy birthday dyno!');
+    }
     console.log(event.data);
   });
 })();
