@@ -82,12 +82,12 @@
             <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
               <div class="mdl-card__supporting-text">
                 <div>
-                  <h1>T-REX status:</h1>
+                  <h6>T-REX status:</h6>
                   <hr>
-                  <h2>Age: {{dynoCtrl.dyno.age}}</h2>
-                  <h2>Hunger: {{dynoCtrl.dyno.hunger}}</h2>
-                  <h2>Sleep: {{dynoCtrl.dyno.sleep}}</h2>
-                  <h2>Joy: {{dynoCtrl.dyno.joy}}</h2>
+                  <span>Age: <span ng-bind="dynoCtrl.dyno.age"></span></span><br>
+                  <span>Hunger: <span ng-bind="dynoCtrl.dyno.hunger"></span></span><br>
+                  <span>Sleep: <span ng-bind="dynoCtrl.dyno.sleep"></span></span><br>
+                  <span>Joy: <span ng-bind="dynoCtrl.dyno.joy"></span></span><br>
                 </div>
               </div>
               <div class="mdl-card__actions">

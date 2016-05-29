@@ -78,6 +78,12 @@
           console.log(navigator.serviceWorker);
         }
       };
+      
+      registration.pushManager.subscribe({
+          userVisibleOnly: true
+      }).then(function(sub) {
+          console.log('endpoint:', sub.endpoint);
+      });
     }).catch(function(e) {
       console.error('Error during service worker registration:', e);
     });
