@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="" ng-app>
+<html lang="" ng-app="dynoApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -75,17 +75,19 @@
       </header>
       <main class="mdl-layout__content">
         <div class="mdl-layout__tab-panel is-active" id="overview">
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" ng-controller="DynoController as dynoCtrl">
             <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
               <i class="material-icons">play_circle_filled</i>
             </header>
             <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
               <div class="mdl-card__supporting-text">
                 <div>
-                  <label>Name:</label>
-                  <input type="text" ng-model="yourName" placeholder="Enter a name here">
+                  <h1>T-REX status:</h1>
                   <hr>
-                  <h1>Hello {{yourName}}!</h1>
+                  <h2>Age: {{dynoCtrl.dyno.age}}</h2>
+                  <h2>Hunger: {{dynoCtrl.dyno.hunger}}</h2>
+                  <h2>Sleep: {{dynoCtrl.dyno.sleep}}</h2>
+                  <h2>Joy: {{dynoCtrl.dyno.joy}}</h2>
                 </div>
               </div>
               <div class="mdl-card__actions">
@@ -291,6 +293,8 @@
     <script src="bower_components/angular/angular.min.js"></script>
     <!-- build:js(app/) ../../scripts/main.min.js -->
     <script src="scripts/main.js"></script>
+    <script src="scripts/dyno-controller.js"></script>
+    <script src="scripts/dyno-service.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

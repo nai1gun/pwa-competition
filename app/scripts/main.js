@@ -62,6 +62,7 @@
                 // fresh content will have been added to the cache.
                 // It's the perfect time to display a "New content is
                 // available; please refresh." message in the page's interface.
+                console.log('The page should be refreshed!');
                 break;
 
               case 'redundant':
@@ -72,19 +73,20 @@
                 // Ignore
             }
           };
+        } else {
+          console.error('No service worker controller');
+          console.log(navigator.serviceWorker);
         }
       };
     }).catch(function(e) {
       console.error('Error during service worker registration:', e);
     });
+  } else {
+    console.error('Cannot register service worker');
   }
 
   // Your custom JavaScript goes here
-
-  navigator.serviceWorker.addEventListener('message', function handler(event) {
-    if (event.data.type === 'birthday') {
-      console.log('Happy birthday dyno!');
-    }
-    console.log(event.data);
-  });
+  
 })();
+
+var dynoApp = angular.module('dynoApp', []);
